@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Blog by Grigorii Khralenok - an expert in content marketing, graphic design, illustration, animation, and copywriting.">
+  <meta name="keywords" content="creative marketing, content marketing, illustration, animation, graphic design, creative service, freelancev">
+  <meta property="og:title" content="Blog - Khralenok">
+  <meta property="og:description" content="Blog by Grigorii Khralenok - an expert in content marketing, graphic design, illustration, animation, and copywriting.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/usp-illustration.jpg') }}">
+  <meta property="og:url" content="https://www.khralenok.com/blog">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="khralenok.com"> 
+  <title>Blog - Khralenok</title>
+  <link rel="canonical" href="https://www.khralenok.com/blog">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="favicon.ico" type="/static/images/icon/favicon.ico">
+  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="/static/images/icon/favicon-16x16.png">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="/static/images/icon/favicon-32x32.png">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="container">
+    <div class="page-title"><h1>Blog</h1></div>
+
+    <div class="gallery">
+        {% for item in blog_items %}
+        <a class="gallery-item" href="{{ url_for('blog_item', item_id=item.url) }}">
+          <div class="item-cover"><img src="{{ item.cover }}"></div>
+            <h2>{{ item.title }}</h2>
+        </a>
+        {% endfor %}
+    </div>
+  </div>
+  {% include 'footer.html' %}
+</body>
+</html>

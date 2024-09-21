@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Services by Grigorii Khralenok - an expert in content marketing, graphic design, illustration, animation, and copywriting.">
+    <meta name="keywords" content="creative marketing, content marketing, illustration, animation, graphic design, creative service, freelancev">
+    <meta property="og:title" content="Services - Khralenok">
+    <meta property="og:description" content="Services by Grigorii Khralenok - an expert in content marketing, graphic design, illustration, animation, and copywriting.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/usp-illustration.jpg') }}">
+    <meta property="og:url" content="https://www.khralenok.com/services">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="khralenok.com"> 
+    <title>Khralenok's Services</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="favicon.ico" type="/static/images/icon/favicon.ico">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="/static/images/icon/favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="/static/images/icon/favicon-32x32.png">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div id="content">
+            <div class="page-title"><h1>Services</h1></div>
+            <div class="service-item">
+                <div class="service-illustration">
+                    <span>🖌️</span>
+                </div>
+                <div class="service-text">
+                    <h2>Graphic Design Services</h2>
+                    <p>Unlock captivating visuals with our Graphic Design solutions. From digital layouts to physical branding, we craft designs tailored to your needs.</p>
+                    <ul>
+                        <li>Visual Identity</li>
+                        <li>Pitch Decks</li>
+                        <li>Social Media Graphics</li>
+                        <li>Workflow Establishment</li>
+                    </ul>
+                </div>  
+            </div>
+            <div class="service-item">
+                <div class="service-illustration">
+                    <span>🖼️</span>
+                </div>
+                <div class="service-text">
+                    <h2>Illustration</h2>
+                    <p>Make captivating visuals with my Illustration services. From sketches to high-quality illustrations, I enhance your marketing messages with expertise and creativity.</p>
+                    <ul>
+                        <li>Blog Illustrations</li>
+                        <li>Comics</li>
+                        <li>Web Graphics</li>
+                        <li>Social Media Graphics</li>
+                    </ul>
+                </div>  
+            </div>
+            <div class="service-item">
+                <div class="service-illustration">
+                    <span>🎭</span>
+                </div>
+                <div class="service-text">
+                    <h2>Animation</h2>
+                    <p>Immerse your audience in captivating storytelling with my Animation services. From concept to execution, I breathe life into your digital presence with dynamic visuals and seamless motion.</p>
+                    <ul>
+                        <li>Conceptualization and Storyboarding</li>
+                        <li>Social Media Animations</li>
+                        <li>Music video</li>
+                        <li>2D and 3D animation</li>
+                    </ul> 
+                </div>  
+            </div>
+            <div class="service-item">
+                <div class="service-illustration">
+                    <span>🌐</span>
+                </div>
+                <div class="service-text">
+                    <h2>Landing Page</h2>
+                    <p>Capture attention and drive action with my Landing Page Design services. I specialize in creating compelling web pages optimized for conversion, seamlessly blending aesthetics with functionality.</p>
+                    <ul>
+                        <li>Eye-catching Design</li>
+                        <li>Conversion-focused Layouts</li>
+                        <li>Responsive and User-friendly</li>
+                        <li>A/B Testing and Optimization</li>
+                    </ul>
+                </div>  
+            </div>
+            <div class="service-item">
+                <div class="service-illustration">
+                    <span>👍</span>
+                </div>
+                <div class="service-text">
+                    <h2>Content Marketing</h2>
+                    <p>Harness the power of strategic storytelling with my Content Marketing services. I craft compelling narratives that resonate with your audience, driving engagement and building brand authority.</p>
+                    <ul>
+                        <li>Strategic Content Planning</li>
+                        <li>Compelling Copywriting</li>
+                        <li>Multimedia Content Creation</li>
+                        <li>Visual Identity</li>
+                    </ul>
+                </div>  
+            </div>
+            <div class="service-item">
+                <div class="service-illustration">
+                    <span>✉️</span>
+                </div>
+                <div class="service-text">
+                    <h2>Newsletter</h2>
+                    <p>Stay connected with your audience through engaging email newsletters. I craft visually appealing designs and compelling content to drive engagement and foster customer loyalty.</p>
+                    <ul>
+                        <li>Eye-catching Design Templates</li>
+                        <li>Tailored Content Creation</li>
+                        <li>HTML layous</li>
+                        <li>A/B Testing strategy</li>
+                    </ul>
+                </div>  
+            </div>
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

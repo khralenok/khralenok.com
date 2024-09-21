@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Metrics Calculator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #container{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #calculator{
+            padding:1rem 1rem 2rem 1rem;
+            background-color: #ffb800;
+            border-radius: 8px;
+            width: 900px;
+
+            h2{text-align: center;}
+        }
+
+        #results{
+            width: 900px;
+            b{color:#F39200;}
+        }
+
+        #inputs{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .calculator-item{
+            width:22%;
+            height:3rem;
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+
+            .parameter-name{
+                height:60px;
+                font-size: 0.8em;
+            }
+
+            input{
+                box-sizing: border-box;
+                width:100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <div id="calculator">
+                <h2>Social Media Metrics Calculator</h2>
+                <p style="text-align: center;"> Put your inputs in the fields below</p>
+                <div id="inputs">
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="investments">Investments ($):</label></div>
+                    <div class="parameter-value"><input type="number" id="investments" value="1000"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="desiredIncome">Desired Income ($):</label></div>
+                    <div class="parameter-value"><input type="number" id="desiredIncome" value="3000"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="averageBill">Avg. Conversion Value ($):</label></div>
+                    <div class="parameter-value"><input type="number" id="averageBill" value="30"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="postsPerMonth">Posts Per Month:</label></div>
+                    <div class="parameter-value"><input type="number" id="postsPerMonth" value="20"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="clickTroughRate">Click Through Rate (%):</label></div>
+                    <div class="parameter-value"><input type="number" id="clickTroughRate" value="1"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="conversionRate">Conversion Rate (%):</label></div>
+                    <div class="parameter-value"><input type="number" id="conversionRate" value="2"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="followers">Followers:</label></div>
+                    <div class="parameter-value"><input type="number" id="followers" value="1000"></div>
+                    </div>
+
+                    <div class="calculator-item">
+                    <div class="parameter-name"><label for="avgViews">Avg. Views:</label></div>
+                    <div class="parameter-value"><input type="number" id="avgViews" value="100"></div>
+                    </div>
+                </div>
+            </div>
+
+                <h2>Results</h2>
+                <div id="results"></div>      
+    </div>
+    <script>
+        // Function to calculate metrics
+        function calculateMetrics() {
+            const investments = parseFloat(document.getElementById('investments').value);
+            const desiredIncome = parseFloat(document.getElementById('desiredIncome').value);
+            const averageBill = parseFloat(document.getElementById('averageBill').value);
+            const postsPerMonth = parseInt(document.getElementById('postsPerMonth').value);
+            const clickTroughRate = parseFloat(document.getElementById('clickTroughRate').value) / 100;
+            const conversionRate = parseFloat(document.getElementById('conversionRate').value) / 100;
+            const followers = parseInt(document.getElementById('followers').value);
+            const avgViews = parseInt(document.getElementById('avgViews').value);
+
+            const returnOfInvestment = (desiredIncome / investments) * 100;
+            const viewsPerConversion = Math.round(1 / (clickTroughRate * conversionRate));
+            const conversionPerMonth = Math.round(desiredIncome / averageBill);
+            const viewsPerMonth = viewsPerConversion * conversionPerMonth;
+            const viewsPerPost = Math.round(viewsPerMonth / postsPerMonth);
+            const neededFolowers = Math.round(viewsPerPost / (avgViews / followers));
+            const postBudget = Math.round(investments / postsPerMonth);
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                    You expect a <b>${returnOfInvestment.toFixed(2)}% Return Of Investments</b>. Such a result requires at least <b>${conversionPerMonth} conversions per month</b>. To achieve it you need <b>${viewsPerConversion} views per conversion</b>. It means every post should gather at least <b>${viewsPerMonth} Views Per Month</b>. In other words, each of your posts should gather about <b>${viewsPerPost} views</b>. To reach such without boosting you need <b>${neededFolowers} followers</b>. If this value is 2+ times higher than you already have, you should boost your posts. But keep in mind that you have only <b>${postBudget}$</b> to craft and boost your post.
+            `;
+        }
+
+        // Attach event listeners to input fields
+        const inputFields = document.querySelectorAll('input[type="number"]');
+        inputFields.forEach(input => {
+            input.addEventListener('input', calculateMetrics);
+        });
+
+        // Calculate metrics initially
+        calculateMetrics();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{ metadata.description }}">
+    <meta name="keywords" content="{{ metadata.keywords }}">
+    <meta property="og:title" content="{{ metadata.title }} - Khralenok">
+    <meta property="og:description" content="{{ metadata.description }}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/usp-illustration.jpg') }}">
+    <meta property="og:url" content="{{ metadata.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="khralenok.com">
+    <title>{{ metadata.title }} - Khralenok</title>
+    <link rel="canonical" href="{{ metadata.url }}">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="favicon.ico" type="/static/images/icon/favicon.ico">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="/static/images/icon/favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="/static/images/icon/favicon-32x32.png">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <div class="article">
+        <!-- Display portfolio item details here -->
+        {{ content | safe }}
+        </div>
+    </div>
+    
+    {% include 'footer.html' %}
+
+</body>
+</html>

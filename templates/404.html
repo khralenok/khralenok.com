@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>404 Not Found</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="favicon.ico" type="{{ url_for('static', filename='/images/icon/favicon.ico') }}">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="{{ url_for('static', filename='images/icon/favicon-16x16.png') }}">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="{{ url_for('static', filename='images/icon/favicon-32x32.png') }}">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .container{
+            justify-content: center!important;
+        }
+        #message{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            h1{
+                font-size: 4em;
+                color: #F39200;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <div id="message">
+            <img src="static/images/portfolio/illustrations/illustrations-1.gif" width="150%">
+            <h1>404</h1>
+            <p>Page not founded</p>
+        </div>
+    </div>
+    
+    {% include 'footer.html' %}
+
+</body>
+</html>

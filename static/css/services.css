@@ -1,0 +1,60 @@
+.service-item{
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap:4rem;
+    background-color: #F7F7F7;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+.service-text{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    li{
+        padding: 0.25rem 0.5rem;
+        border: 2px solid black;
+        border-radius: 8px;
+    }
+    li:hover{
+        background-color: #FFB800;
+    }
+}
+.service-illustration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:35%;
+    font-size: 7em;
+}
+
+/* FOR SMALL TABLETS - Menu changes to burger*/
+@media only screen and (max-width:768px){
+    .service-item{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .service-illustration{
+        font-size: 4em;
+    }
+    .service-text{
+        p{
+            font-size: 1em;
+        }
+        h2{
+            font-size: 1.2em;
+        }
+        ul{
+            gap:0.5rem;
+        }
+        li{
+            font-size: 0.8em;
+        }
+    }
+}
