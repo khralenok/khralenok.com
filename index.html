@@ -8,55 +8,54 @@
 </head>
 <body>
   <header>
-    <div id="header-logo">
-      <a href="/"><img src="images/logo.svg" /></a>
-    </div>
-    <nav id="header-menu">
+    <a class="logo" href="/">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.9904 12.2171C23.9445 12.1406 22.9347 10.1822 19.7829 11.7198L16.0191 13.5941L18.0846 17.748L21.8561 15.8738C24.9773 14.2902 24.0287 12.3012 23.9904 12.2171ZM16.0038 0C7.16806 0 0 7.16041 0 15.9962C0 24.8319 7.16806 32 16.0038 32C24.8396 32 32 24.8319 32 15.9962C32 7.16041 24.8396 0 16.0038 0ZM25.9182 16.8759C24.8013 18.0923 23.4779 18.7731 23.3325 18.842L19.5611 20.7162L22.8276 27.2952L19.8594 28.764L13.0509 15.0629L4.40641 19.3622L2.92995 16.394L11.5745 12.0947L8.30791 5.52331L11.2761 4.04686L14.5427 10.6182L18.3141 8.74396C18.4595 8.67511 19.7982 8.03251 21.4353 7.87186C23.9522 7.63471 25.9106 8.65216 26.9586 10.7483C27.999 12.8444 27.6242 15.017 25.9182 16.8759ZM19.7829 11.7198L16.0191 13.5941L18.0846 17.748L21.8561 15.8738C24.9773 14.2902 24.0287 12.3012 23.9904 12.2171C23.9445 12.1406 22.9347 10.1822 19.7829 11.7198Z"/>
+        </svg>
+      KHRALENOK
+    </a>
+    <nav>
       <ul>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#reviews">Reviews</a></li>
+        <li><button>Contact me</button></li>
       </ul>
     </nav>
   </header>
-<div class="container">
-  <div id="hero">
-    <div id="hero-image">
-      <canvas id="canvas"></canvas>
+
+  <section id="hero">
+    <div class="container">
+      <div id="hero-text">
+        <h1>Need a full-stack designer for all your marketing needs?</h1>
+        <p>Hi, I’m Grigorii Khralenok, designer you've been looking for.</p>
+        <button>Reach me out</button>
+      </div>
+
+      <div id="hero-image">
+
+      </div>
     </div>
-    <div id="hero-text">
-    <h1>Need a full-stack designer for all your marketing needs?</h1>
-    <p>Hi, I’m Grigorii Khralenok, designer you've been looking for.</p>
-    <button id="ctaButton" onclick="openPopup()" type="button">Reach me out</button>
-    </div>
-  </div>
-  <div id="content">
-    <div id="portfolio">
+  </section>
+
+  <section id="services">
+    <div class="container">
+    <h2>What can I get for you</h2>
       <div class="gallery">
       </div>
-  <div>
-    <h2>My Services</h2>
-    <div id="services">
-      <div class="service-card"><span>🖌️</span><a>Graphic Design</a></div>
-      <div class="service-card"><span>🖼️</span><a>Illustration</a></div>
-      <div class="service-card"><span>🎭</span><a>Animation</a></div>
-      <div class="service-card"><span>🌐</span><a>Landing Pages</a></div>
-      <div class="service-card"><span>👍</span><a>Social Media</a></div>
-      <div class="service-card"><span>✉️</span><a>Newsletters</a></div>
-    </div>
-    <div class="cta">
-      <button onclick="location.href='services'" type="button">Learn More</button>
-    </div>
+      <button>More Examples</button>
+      </div>
+  </section>
 
-    <h2>My Latest Work</h2>
-
+  <section id="portfolio">
+    <div class="container">
+      <h2>What I did before</h2>
     </div>
-    <div class = cta>
-      <button onclick="location.href='portfolio'" type="button">More Examples</button>
-    </div>
+  </section>
 
-    <h2>Reviews</h2>
-    <div id="reviews">
+  <section id="reviews">
+    <h2>What people say about working with me</h2>
+    <div class="container">
       <div class="review-card"><p>I recommend @khralenok, he worked on my team and outsourced for a long time. I’ll warn you right away - he gets very involved in details can ask awkward questions, and can't stand an apathetic attitude to the job 😀</p>
       <hr class="solid">
       <div class="reviewer"><img src="images/nurlan.png" alt="avatar"><a><b>Nurlan Tlegenov</b>, 1touch.io</a></div></div>
@@ -65,63 +64,27 @@
       <div class="reviewer"><img src="images/imane.png" alt="avatar"><a><b>Imane Salam</b>, AGENCE DRIVE</a></div></div>
     </div>
     <div class="cta">
-      <button onclick="openPopup()" type="button">Get in touch</button>
+      <button>Get in touch</button>
     </div>
-    <h2>FAQ</h2>
-    <div id="faq">
-      <ul class="faq-list">
-        <li class="faq-item">
-          <div class="faq-question"><span id="faq-arrow">▶</span><a>How long have you been doing this?</a></div>
-          <div class="faq-answer">I've been providing this services for 8 years.</div>
-        </li>
-        <hr class="solid"> 
-        <li class="faq-item">
-          <div class="faq-question"><span id="faq-arrow">▶</span><a>Do you have a team?</a></div>
-          <div class="faq-answer">I can manage most project myself and able to quickly establish a team when required. </div>
-        </li>
-        <hr class="solid"> 
-        <li class="faq-item">
-          <div class="faq-question"><span id="faq-arrow">▶</span><a>Are you authorized to work with us?</a></div>
-          <div class="faq-answer">We could work through Upwork direct contracts or Paypal/Crypto if we speack about some one day projects.</div>
-        </li>
-        <hr class="solid"> 
-        <li class="faq-item">
-          <div class="faq-question"><span id="faq-arrow">▶</span><a>Are you interesting in full time job?</a></div>
-          <div class="faq-answer">It's negotiable.</div>
-        </li>
-      </ul>
-    </div>
+  </section>
+
   </div>
 
   <footer>
-    <div id="footer-container">
-    <!-- Logo -->
-    <div id="footer-logo">
-            <a href="{{ url_for('index') }}"><img src="images/logo-white.svg" alt="Khralenok"></a>
-    </div>
-    <!-- Menu -->
-    <nav id="footer-menu">
-        <ul>
-            <li><a href="{{ url_for('blog') }}">Blog</a></li>
-            <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
-            <li><a href="{{ url_for('art') }}">Art</a></li>
-            <li><a href="{{ url_for('services') }}">Services</a></li>
-        </ul>
-    </nav>
-    <!-- Social Media Links -->
-    <div id="social-media">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/khralenok/"><img src="images/linkedin.svg" alt="LinkedIn"></a></li>
-            <li><a href="https://www.pinterest.com/khralenok_studio/"><img src="images/pinterest.svg" alt="Pinterest"></a></li>
-            <li><a href="https://www.instagram.com/khralenok.studio/"><img src="images/instagram.svg" alt="Instagram"></a></li>
-            <li><a href="https://www.behance.net/khralenok"><img src="images/behance.svg" alt="Behance"></a></li>
-        </ul>
-    </div>
-    </div>
-    <!-- Copyrights -->
-    <div id="copyrights">
-        © 2024 Grigorii Khralenok
-    </div> 
-</footer>
+    <a class="logo" href="/">
+      <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.9904 12.2171C23.9445 12.1406 22.9347 10.1822 19.7829 11.7198L16.0191 13.5941L18.0846 17.748L21.8561 15.8738C24.9773 14.2902 24.0287 12.3012 23.9904 12.2171ZM16.0038 0C7.16806 0 0 7.16041 0 15.9962C0 24.8319 7.16806 32 16.0038 32C24.8396 32 32 24.8319 32 15.9962C32 7.16041 24.8396 0 16.0038 0ZM25.9182 16.8759C24.8013 18.0923 23.4779 18.7731 23.3325 18.842L19.5611 20.7162L22.8276 27.2952L19.8594 28.764L13.0509 15.0629L4.40641 19.3622L2.92995 16.394L11.5745 12.0947L8.30791 5.52331L11.2761 4.04686L14.5427 10.6182L18.3141 8.74396C18.4595 8.67511 19.7982 8.03251 21.4353 7.87186C23.9522 7.63471 25.9106 8.65216 26.9586 10.7483C27.999 12.8444 27.6242 15.017 25.9182 16.8759ZM19.7829 11.7198L16.0191 13.5941L18.0846 17.748L21.8561 15.8738C24.9773 14.2902 24.0287 12.3012 23.9904 12.2171C23.9445 12.1406 22.9347 10.1822 19.7829 11.7198Z"/>
+      </svg>
+      KHRALENOK
+      </a>
+      <a> 
+        2025, Grigorii Khralenok
+      </a> 
+      <ul id="social-media">
+              <li><a href="https://www.linkedin.com/in/khralenok/"><img src="images/linkedin.svg" alt="LinkedIn"></a></li>
+              <li><a href="https://www.instagram.com/khralenok.studio/"><img src="images/instagram.svg" alt="Instagram"></a></li>
+              <li><a href="https://www.behance.net/khralenok"><img src="images/behance.svg" alt="Behance"></a></li>
+      </ul>
+  </footer>
 </body>
 </html>
