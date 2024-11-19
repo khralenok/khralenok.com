@@ -2,6 +2,7 @@
   --accent: #ffaf00;
   --black: #191414;
   --gray800: #78736e;
+  --gray700: #918b84;
   --gray500: #d2cdc8;
   --white: #fffdfb;
   font-size: 16px;
@@ -98,11 +99,17 @@ section.dark {
 }
 
 .component.banner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   padding: 2rem;
   border-radius: 1rem;
   background: var(--accent);
 }
+
 .card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
   padding: 2rem;
   border-radius: 1rem;
   border: 1px solid var(--gray500);
@@ -120,7 +127,13 @@ section.dark {
 nav > ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
 }
 
 #social-media {
@@ -152,7 +165,30 @@ nav > ul {
   text-align: left;
 }
 
+.component.banner .title,
+.component.banner .cta {
+  text-align: left;
+  grid-column: span 8;
+}
+
 .cta {
   grid-column: 3 / span 8;
   text-align: center;
+}
+
+button {
+  background: var(--accent);
+  border: 0px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}
+
+button.contrast {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+span.secondary {
+  color: var(--gray700);
 }
