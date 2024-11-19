@@ -2,6 +2,7 @@
   --accent: #ffaf00;
   --black: #191414;
   --gray800: #78736e;
+  --gray500: #d2cdc8;
   --white: #fffdfb;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
@@ -13,8 +14,12 @@
   margin: 0;
 }
 
-body {
+html {
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 section,
@@ -29,16 +34,13 @@ header,
 footer {
   justify-content: space-between;
   padding: 0 2rem;
-}
-
-header,
-footer {
   height: 5rem;
 }
 
 section {
   padding: 5rem 0;
 }
+
 .logo {
   text-decoration: none;
   font-weight: bold;
@@ -67,11 +69,52 @@ section {
   justify-content: center;
 }
 
+section.dark {
+  background-color: var(--gray800);
+  color: var(--white);
+}
+
 .container {
   width: 80em;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(12, 1fr);
+}
+
+.component {
+  grid-column: 1 / span 12;
+}
+
+.component.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.component.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.component.banner {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--accent);
+}
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--gray500);
+}
+
+#reviews .card,
+#portfolio .card {
+  grid-column: span 4;
+}
+
+#my-projects .card {
+  grid-column: span 6;
 }
 
 nav > ul {
@@ -91,17 +134,25 @@ nav > ul {
 
 #hero-text {
   grid-column: span 8;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
 }
 
 .title {
-  grid-column: 2 / span 10;
+  grid-column: 3 / span 8;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+.title.left {
+  text-align: left;
+}
+
 .cta {
-  grid-column: 2 / span 10;
+  grid-column: 3 / span 8;
   text-align: center;
 }
