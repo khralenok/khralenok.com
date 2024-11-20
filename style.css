@@ -5,7 +5,7 @@
   --gray700: #918b84;
   --gray500: #d2cdc8;
   --white: #fffdfb;
-  font-size: 16px;
+  --base-font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--black);
 }
@@ -21,6 +21,38 @@ html {
 
 body {
   overflow-x: hidden;
+  font-size: var(--base-font-size);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+a,
+p,
+button {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+a:link,
+button {
+  transition: transform 500ms;
+}
+a:link:hover,
+button:hover {
+  transform: scale(1.05);
 }
 
 section,
@@ -38,12 +70,15 @@ footer {
   padding: 0 2rem;
   height: 5rem;
 }
-header {
-  position: fixed;
-  inset: 0 0 auto 0;
-}
+
 section {
   padding: 5rem 0;
+}
+
+header.sticky {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
 }
 
 .logo {
@@ -91,9 +126,21 @@ section.dark {
 }
 
 .component.accordion {
+  grid-column: 3 / span 8;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.accordion.card p {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 500ms max-height 500ms;
+}
+.accordion.card.active p {
+  max-height: 20em;
+  opacity: 1;
 }
 
 .component.grid {
@@ -103,8 +150,10 @@ section.dark {
 }
 
 .component.banner {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-column: 3 / span 8;
+  grid-template-columns: repeat(8, 1fr);
   padding: 2rem;
   border-radius: 1rem;
   background: var(--accent);
@@ -138,6 +187,7 @@ nav > ul {
 nav a {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 #social-media {
@@ -184,7 +234,7 @@ nav a {
 .component.banner .title,
 .component.banner .cta {
   text-align: left;
-  grid-column: span 8;
+  grid-column: span 6;
 }
 
 .cta {
@@ -207,4 +257,19 @@ button.contrast {
 
 span.secondary {
   color: var(--gray700);
+}
+
+#cta-banner {
+  padding-bottom: 7.5rem;
+}
+
+#cta-banner-illustration {
+  position: absolute;
+  width: 21.5em;
+  bottom: -13em;
+  right: -3em;
+  z-index: 100;
+}
+#cta-banner-illustration img {
+  width: 100%;
 }
