@@ -273,3 +273,8 @@ span.secondary {
 #cta-banner-illustration img {
   width: 100%;
 }
+
+.review-author {
+  display: flex;
+  gap: 1rem;
+}
