@@ -74,11 +74,17 @@ footer {
 section {
   padding: 5rem 0;
 }
-
+header {
+  top: 5rem;
+  transform: translateY(-5rem);
+  transition: transform 250ms;
+}
 header.sticky {
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 100;
+  background: var(--white);
+  transform: translateY(0rem);
+  z-index: 150;
 }
 
 .logo {
@@ -136,7 +142,7 @@ section.dark {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: opacity 500ms max-height 500ms;
+  transition: opacity 500ms, max-height 1000ms;
 }
 .accordion.card.active p {
   max-height: 20em;
