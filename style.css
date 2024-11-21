@@ -166,6 +166,7 @@ section.dark {
 }
 
 .card {
+  position: relative;
   display: block;
   color: inherit;
   text-decoration: none;
@@ -286,4 +287,17 @@ span.secondary {
 .review-author {
   display: flex;
   gap: 1rem;
+}
+
+.accordion.arrow {
+  position: absolute;
+  inset: 2rem 1rem auto auto;
+  width: 2rem;
+  height: 2rem;
+  stroke: var(--white);
+  fill: none;
+  transition: transform 250ms;
+}
+.accordion.card.active .accordion.arrow {
+  transform: rotate(90deg);
 }
