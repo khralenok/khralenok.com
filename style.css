@@ -4,6 +4,7 @@
   --gray800: #78736e;
   --gray700: #918b84;
   --gray500: #d2cdc8;
+  --gray300: #f0edeb;
   --white: #fffdfb;
   --base-font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
@@ -309,4 +310,70 @@ span.secondary {
 }
 .cover img {
   width: 100%;
+}
+
+.modal-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(25, 20, 20, 0.6);
+  display: none;
+}
+
+@keyframes modalTransition {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-wrapper.active {
+  display: block;
+  animation: modalTransition 250ms;
+}
+
+.modal {
+  width: 40em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 1rem;
+  background: white;
+}
+
+.modal > form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+.modal input,
+.modal textarea {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--gray300);
+  border: 0px;
+  border-radius: 0.5rem;
+}
+label.required::after {
+  content: " *";
+  color: red;
+}
+
+.modal-close {
+  position: absolute;
+  inset: 1rem 1rem auto auto;
+  fill: none;
+  stroke: var(--black);
+  width: 16px;
+  height: 16px;
 }
