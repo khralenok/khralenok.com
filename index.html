@@ -40,15 +40,21 @@
           <line x1="2" y1="2" x2="14" y2="14" />
           <line x1="14" y1="2" x2="2" y2="14" />
         </svg>
-          <form action="respondForm.php" method="POST">
+
+          <form id="contactForm" action="respondForm.php" method="POST">
+            <div>
+              <h2>Fill this form please</h2>
+              <p>And I'll contact you back as soon as possible.</p>
+            </div>
               <label for="email" class="required">Your e-mail:</label>
               <input type="email" name="email" placeholder="john@smith.com" required></input>
               <label for="name" class="required">Your name:</label>
               <input type="text" name="name" placeholder="John Smith" required></input>
               <label for="message">Project details:</label>
               <textarea id="message" name="message" placeholder="Feel free to share any details about your project and how can I help you"></textarea>
-              <button type="submit" value="Submit">Submit</button>
+              <button type="submit" value="Submit"><span class="spinner" id="spinner"></span>Submit</button>
             </form>
+            <div id="feedbackMessage" class="hidden"></div>
       </div>
   </div>
 
@@ -403,5 +409,5 @@
     <script src="/scripts/header.js"></script>
     <script src="/scripts/accordion.js"></script>
     <script src="/scripts/modal.js"></script>
-  </body>
+    <script src="/scripts/form.js"></script>
 </html>
