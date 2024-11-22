@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grigorii Khralenok - Full-stack Designer for Marketing needs</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="scripts/header.js"></script>
+    <script defer src="scripts/accordion.js"></script>
+    <script defer src="scripts/modal.js"></script>
+    <script defer src="scripts/form.js"></script>
   </head>
   <body>
     <header>
@@ -37,8 +41,8 @@
     <div class="modal-wrapper">
       <div class="modal">
         <svg class="modal-close" viewbox="0 0 16 16">
-          <line x1="2" y1="2" x2="14" y2="14" />
-          <line x1="14" y1="2" x2="2" y2="14" />
+          <line x1="2" y1="2" x2="14" y2="14"></line>
+          <line x1="14" y1="2" x2="2" y2="14"></line>
         </svg>
 
           <form id="contactForm" action="respondForm.php" method="POST">
@@ -52,7 +56,7 @@
               <input type="text" name="name" placeholder="John Smith" required></input>
               <label for="message">Project details:</label>
               <textarea id="message" name="message" placeholder="Feel free to share any details about your project and how can I help you"></textarea>
-              <button type="submit" value="Submit"><span class="spinner" id="spinner"></span>Submit</button>
+              <button type="submit" id="submitBtn" value="Submit"><span class="spinner" id="spinner"></span>Submit</button>
             </form>
             <div id="feedbackMessage" class="hidden"></div>
       </div>
@@ -406,8 +410,4 @@
         </li>
       </ul>
     </footer>
-    <script src="/scripts/header.js"></script>
-    <script src="/scripts/accordion.js"></script>
-    <script src="/scripts/modal.js"></script>
-    <script src="/scripts/form.js"></script>
 </html>
