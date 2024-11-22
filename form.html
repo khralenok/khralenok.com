@@ -8,7 +8,13 @@
   </head>
   <body>
     <form action="respondForm.php" method="POST">
-      <input type="submit" value="Submit" />
-    </form>
+        <label for="email">Your e-mail</label>
+        <input type="email" name="email"></input>
+        <label for="name">Your name</label>
+        <input type="text" name="name"></input>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Submit">
+      </form>
   </body>
 </html>
