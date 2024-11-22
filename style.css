@@ -37,6 +37,7 @@ h2 {
 h3 {
   font-size: 1.5rem;
   line-height: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 a,
@@ -300,4 +301,12 @@ span.secondary {
 }
 .accordion.card.active .accordion.arrow {
   transform: rotate(90deg);
+}
+
+.cover {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.cover img {
+  width: 100%;
 }
