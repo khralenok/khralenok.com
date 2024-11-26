@@ -9,7 +9,7 @@ $message = isset($_POST['message']) ? htmlspecialchars($_POST['message']) : '';
 $to = "khralenok.g@gmail.com";
 $subject = "New form submission on khralenok.com";
 $message = "Name = $name\r\nEmail = $email\r\nMessage = $message";
-$headers = "From: grigorii@khraleok.com";
+$headers = "From: grigorii@khralenok.com";
 
 
 if (mail($to, $subject, $message, $headers)) {
