@@ -309,8 +309,6 @@ span.secondary {
 }
 
 .accordion.arrow {
-  position: absolute;
-  inset: 2rem 1rem auto auto;
   width: 2rem;
   height: 2rem;
   stroke: var(--white);
@@ -452,4 +450,5 @@ button[type="submit"] {
 }
 .molecule.liquid {
   justify-content: space-between;
+  width: 100%;
 }
