@@ -1,13 +1,30 @@
 :root {
   --accent: #fab432;
-  --black: #1e1b19;
+  --black: #282523;
   --gray900: #6c6660;
   --gray800: #78736e;
   --gray600: #8e8982;
-  --gray300: #dcd2c8;
+  --gray300: #d7d2c8;
+  --gray200: #e4e1dc;
   --gray100: #faf8f5;
   --white: #fffefd;
+
   --base-font-size: 16px;
+  --paragraph-font-size: 1.25rem;
+  --font-scale-ratio: 1.25;
+
+  --spacing-scale-ratio: 2;
+  --spacing-siblings: 1rem;
+  --spacing-friends: calc(
+    (var(--spacing-siblings) * var(--spacing-scale-ratio))
+  );
+  --spacing-housemates: calc(
+    (var(--spacing-friends) * var(--spacing-scale-ratio))
+  );
+  --spacing-townmates: calc(
+    (var(--spacing-housemates) * var(--spacing-scale-ratio))
+  );
+
   font-family: Arial, Helvetica, sans-serif;
   color: var(--black);
 }
@@ -21,39 +38,43 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
+  width: 100%;
   overflow-x: hidden;
+}
+
+body {
   font-size: var(--base-font-size);
   background-color: var(--gray100);
-  letter-spacing: 0.5px;
 }
 
 h1,
 h2,
 h3 {
-  font-weight: bold;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: calc(var(--paragraph-font-size) * 0.05);
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-size: calc(var(--paragraph-font-size) * pow(var(--font-scale-ratio), 3));
 }
 
 h2 {
-  font-size: 1.875rem;
-  line-height: 2.5rem;
+  font-size: calc(var(--paragraph-font-size) * pow(var(--font-scale-ratio), 2));
 }
 
 h3 {
-  font-size: 1.375rem;
-  line-height: 2rem;
+  font-size: calc(var(--paragraph-font-size) * pow(var(--font-scale-ratio), 1));
 }
 
 a,
 p,
 button {
-  font-size: 1.25rem;
-  line-height: 1.625rem;
+  font-size: var(--paragraph-font-size);
+  letter-spacing: calc(var(--paragraph-font-size) * 0.025);
+  line-height: 135%;
 }
 
 a:link,
@@ -77,12 +98,12 @@ footer {
 header,
 footer {
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-friends);
   height: 5rem;
 }
 
 section {
-  padding: 5rem 0;
+  padding: var(--spacing-townmates) 0;
 }
 header {
   top: 5rem;
@@ -103,7 +124,7 @@ header.sticky {
   color: var(--black);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing-siblings) / 2);
 }
 .logo-icon {
   fill: var(--accent);
@@ -133,19 +154,45 @@ section.dark {
 .container {
   width: 80em;
   display: grid;
-  gap: 3rem;
+  gap: var(--spacing-housemates);
   grid-template-columns: repeat(12, 1fr);
 }
 
 .component {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   grid-column: 1 / span 12;
+  gap: var(--spacing-friends);
+}
+
+.component.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .component.accordion {
   grid-column: 3 / span 8;
+}
+
+.component.banner {
+  grid-column: 3 / span 8;
+  grid-template-columns: repeat(8, 1fr);
+  padding: var(--spacing-friends);
+  border-radius: var(--spacing-friends);
+  background: var(--accent);
+}
+
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  color: inherit;
+  text-decoration: none;
+  gap: var(--spacing-friends);
+  padding: var(--spacing-friends);
+  border-radius: var(--spacing-friends);
+  background-color: var(--white);
 }
 
 .accordion.card p {
@@ -159,34 +206,6 @@ section.dark {
   position: static;
   max-height: 20em;
   opacity: 1;
-}
-
-.component.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
-}
-
-.component.banner {
-  position: relative;
-  display: grid;
-  grid-column: 3 / span 8;
-  grid-template-columns: repeat(8, 1fr);
-  padding: 3rem;
-  border-radius: 2rem;
-  background: var(--accent);
-}
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  color: inherit;
-  text-decoration: none;
-  padding: 2rem;
-  border-radius: 2rem;
-  background-color: var(--white);
 }
 
 .dark .card {
@@ -206,7 +225,7 @@ nav > ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--spacing-friends);
 }
 
 nav a {
@@ -218,7 +237,7 @@ nav a {
 #social-media {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: var(--spacing-siblings);
 }
 .social-media {
   fill: var(--gray800);
@@ -230,7 +249,7 @@ nav a {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 2rem;
+  gap: var(--spacing-friends);
 }
 #hero-image {
   grid-column: span 4;
@@ -249,7 +268,7 @@ nav a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--spacing-friends);
 }
 
 .title.left {
@@ -289,7 +308,7 @@ span.secondary {
 }
 
 #cta-banner {
-  padding-bottom: 7.5rem;
+  padding-bottom: calc(var(--spacing-townmates) * 2);
 }
 
 #cta-banner-illustration {
@@ -305,12 +324,12 @@ span.secondary {
 
 .review-author {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-siblings);
 }
 
 .accordion.arrow {
-  width: 2rem;
-  height: 2rem;
+  width: var(--spacing-friends);
+  height: var(--spacing-friends);
   stroke: var(--white);
   fill: none;
   transition: transform 250ms;
@@ -320,7 +339,7 @@ span.secondary {
 }
 
 .cover {
-  border-radius: 1rem;
+  border-radius: var(--spacing-siblings);
   overflow: hidden;
 }
 .cover img {
@@ -358,12 +377,12 @@ span.secondary {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 3rem;
-  border-radius: 2rem;
+  padding: var(--spacing-friends);
+  border-radius: var(--spacing-friends);
+  gap: var(--spacing-friends);
   background: var(--white);
   display: flex;
   flex-direction: column;
-  gap: 3rem;
 }
 
 .modal > form {
@@ -373,11 +392,11 @@ span.secondary {
 
 .modal input,
 .modal textarea {
-  margin-bottom: 1rem;
-  padding: 1rem;
+  margin-bottom: var(--spacing-siblings);
+  padding: var(--spacing-siblings);
   background: var(--gray100);
   border: 0px;
-  border-radius: 0.5rem;
+  border-radius: calc(var(--spacing-siblings) / 2);
 }
 label.required::after {
   content: " *";
@@ -389,12 +408,12 @@ label.required::after {
   inset: 2rem 2rem auto auto;
   fill: none;
   stroke: var(--black);
-  width: 16px;
-  height: 16px;
+  width: var(--spacing-siblings);
+  height: var(--spacing-siblings);
 }
 
 button[type="submit"] {
-  margin-top: 2rem;
+  margin-top: var(--spacing-friends);
 }
 
 /* Spinner styles */
@@ -403,8 +422,8 @@ button[type="submit"] {
   border: 2px solid transparent;
   border-top: 2px solid #fff;
   border-radius: 50%;
-  width: 16px;
-  height: 16px;
+  width: var(--spacing-siblings);
+  height: var(--spacing-siblings);
   animation: spin 0.8s linear infinite;
   margin-right: 5px;
 }
@@ -421,7 +440,7 @@ button[type="submit"] {
 /* Feedback message styles */
 #feedbackMessage {
   margin-top: 10px;
-  padding: 10px;
+  padding: var(--spacing-siblings);
   border-radius: 4px;
 }
 
@@ -443,7 +462,7 @@ button[type="submit"] {
 
 .molecule {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-siblings);
 }
 .molecule.vertical {
   flex-direction: column;
@@ -451,4 +470,76 @@ button[type="submit"] {
 .molecule.liquid {
   justify-content: space-between;
   width: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --spacing-siblings: 0.75rem;
+    --paragraph-font-size: 1rem;
+  }
+
+  .container {
+    width: 60em; /* 960px */
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: 40em; /* 640px */
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .component.grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .component .component.accordion,
+  .component.banner {
+    grid-column: 1 / span 6;
+  }
+
+  #reviews .card,
+  .title,
+  .cta {
+    grid-column: 2 / span 4;
+  }
+
+  #portfolio .card {
+    grid-column: span 3;
+  }
+
+  nav {
+    position: absolute;
+    transform: translateX(1000px);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --spacing-siblings: 0.5rem;
+    --paragraph-font-size: 0.75rem;
+  }
+  .container {
+    width: 30em; /* 480px */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 20em; /* 320px */
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .component.grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .component,
+  .card,
+  .title,
+  .cta,
+  .component.accordion,
+  #portfolio .card,
+  #reviews .card {
+    grid-column: 1 / span 4;
+  }
 }
