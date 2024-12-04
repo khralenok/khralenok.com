@@ -8,21 +8,19 @@
   --gray200: #e4e1dc;
   --gray100: #faf8f5;
   --white: #fffefd;
-
   --base-font-size: 16px;
-  --paragraph-font-size: 1.25rem;
   --font-scale-ratio: 1.25;
-
   --spacing-scale-ratio: 2;
+  --paragraph-font-size: 1.25rem;
   --spacing-siblings: 1rem;
   --spacing-friends: calc(
-    (var(--spacing-siblings) * var(--spacing-scale-ratio))
+    (var(--spacing-siblings) * pow(var(--spacing-scale-ratio), 1))
   );
   --spacing-housemates: calc(
-    (var(--spacing-friends) * var(--spacing-scale-ratio))
+    (var(--spacing-siblings) * pow(var(--spacing-scale-ratio), 2))
   );
   --spacing-townmates: calc(
-    (var(--spacing-housemates) * var(--spacing-scale-ratio))
+    (var(--spacing-siblings) * pow(var(--spacing-scale-ratio), 3))
   );
 
   font-family: Arial, Helvetica, sans-serif;
@@ -124,7 +122,7 @@ header.sticky {
   color: var(--black);
   display: inline-flex;
   align-items: center;
-  gap: calc(var(--spacing-siblings) / 2);
+  gap: var(--spacing-siblings);
 }
 .logo-icon {
   fill: var(--accent);
@@ -152,35 +150,21 @@ section.dark {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 80em;
-  display: grid;
   gap: var(--spacing-housemates);
-  grid-template-columns: repeat(12, 1fr);
+}
+
+.cta {
+  text-align: center;
 }
 
 .component {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  grid-column: 1 / span 12;
-  gap: var(--spacing-friends);
-}
-
-.component.grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
-
-.component.accordion {
-  grid-column: 3 / span 8;
-}
-
-.component.banner {
-  grid-column: 3 / span 8;
-  grid-template-columns: repeat(8, 1fr);
-  padding: var(--spacing-friends);
-  border-radius: var(--spacing-friends);
-  background: var(--accent);
+  gap: var(--spacing-friends);
 }
 
 .card {
@@ -208,17 +192,32 @@ section.dark {
   opacity: 1;
 }
 
-.dark .card {
+section.dark .card {
   background-color: var(--gray900);
 }
-
+#services .card {
+  grid-column: 3 / span 8;
+}
 #reviews .card,
 #portfolio .card {
   grid-column: span 4;
 }
 
+#cta-banner .card {
+  grid-column: 3 / span 8;
+  background: var(--accent);
+}
+
 #my-projects .card {
   grid-column: span 6;
+}
+
+.avatar {
+  height: var(--spacing-housemates);
+  width: var(--spacing-housemates);
+}
+.avatar img {
+  width: 100%;
 }
 
 nav > ul {
@@ -264,7 +263,6 @@ nav a {
 }
 
 .title {
-  grid-column: 3 / span 8;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -282,11 +280,6 @@ nav a {
   grid-column: span 6;
 }
 
-.cta {
-  grid-column: 3 / span 8;
-  text-align: center;
-}
-
 button,
 .button {
   font-weight: 600;
@@ -294,8 +287,8 @@ button,
   text-decoration: none;
   background: var(--accent);
   border: 0px;
-  border-radius: 5rem;
-  padding: 0.75rem 2.25rem;
+  border-radius: var(--spacing-townmates);
+  padding: var(--spacing-siblings) calc(var(--spacing-siblings) * 3);
 }
 
 button.contrast {
@@ -474,8 +467,8 @@ button[type="submit"] {
 
 @media screen and (max-width: 1280px) {
   :root {
-    --spacing-siblings: 0.75rem;
     --paragraph-font-size: 1rem;
+    --spacing-siblings: 0.75rem;
   }
 
   .container {
@@ -486,26 +479,22 @@ button[type="submit"] {
 @media screen and (max-width: 960px) {
   .container {
     width: 40em; /* 640px */
+  }
+
+  .component {
     grid-template-columns: repeat(6, 1fr);
   }
 
-  .component.grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .component .component.accordion,
-  .component.banner {
-    grid-column: 1 / span 6;
-  }
-
-  #reviews .card,
-  .title,
-  .cta {
+  #services .card,
+  #reviews .card {
     grid-column: 2 / span 4;
   }
 
   #portfolio .card {
     grid-column: span 3;
+  }
+  #cta-banner .card {
+    grid-column: 1 / span 6;
   }
 
   nav {
@@ -516,8 +505,8 @@ button[type="submit"] {
 
 @media screen and (max-width: 640px) {
   :root {
+    --paragraph-font-size: 0.875rem;
     --spacing-siblings: 0.5rem;
-    --paragraph-font-size: 0.75rem;
   }
   .container {
     width: 30em; /* 480px */
@@ -527,19 +516,15 @@ button[type="submit"] {
 @media screen and (max-width: 480px) {
   .container {
     width: 20em; /* 320px */
+  }
+  .component {
     grid-template-columns: repeat(4, 1fr);
   }
-  .component.grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .component,
-  .card,
-  .title,
-  .cta,
-  .component.accordion,
+  #services .card,
+  #reviews .card,
   #portfolio .card,
-  #reviews .card {
+  #my-projects .card,
+  #cta-banner .card {
     grid-column: 1 / span 4;
   }
 }
