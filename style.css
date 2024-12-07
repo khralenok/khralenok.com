@@ -253,12 +253,13 @@ nav a {
 }
 #hero-image {
   grid-column: span 4;
+  text-align: center;
   height: 36em;
 }
 
 #hero-image img {
   position: relative;
-  height: calc(100% + 8rem);
+  height: calc(100% + 12rem);
   bottom: 3rem;
   right: 3rem;
 }
@@ -477,6 +478,25 @@ button[type="submit"] {
   .container {
     width: 60em; /* 960px */
   }
+
+  #hero-image img {
+    height: calc(100% + 10rem);
+    bottom: 0rem;
+    right: 0rem;
+  }
+  #hero-text {
+    grid-column: span 6;
+  }
+  #hero-text .title {
+    text-align: center;
+    align-items: center;
+  }
+
+  #cta-banner-illustration {
+    width: 16em;
+    bottom: -9.7em;
+    right: -3em;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -496,6 +516,7 @@ button[type="submit"] {
   #portfolio .card {
     grid-column: span 3;
   }
+
   #cta-banner .card {
     grid-column: 1 / span 6;
   }
@@ -514,6 +535,15 @@ button[type="submit"] {
   .container {
     width: 30em; /* 480px */
   }
+
+  #hero-image img {
+    height: calc(100% + 4rem);
+  }
+  #cta-banner-illustration {
+    width: 14em;
+    bottom: -8.5em;
+    right: -2em;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -529,5 +559,19 @@ button[type="submit"] {
   #my-projects .card,
   #cta-banner .card {
     grid-column: 1 / span 4;
+  }
+
+  #hero-image {
+    height: 18em;
+  }
+  #hero-image img {
+    height: 130%;
+  }
+  #hero-text {
+    grid-column: span 4;
+  }
+
+  #cta-banner .card {
+    padding-bottom: calc(var(--spacing-friends) * 4);
   }
 }
