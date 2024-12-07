@@ -36,17 +36,14 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
 body {
   width: 100%;
   overflow-x: hidden;
-}
-
-body {
   font-size: var(--base-font-size);
   background-color: var(--gray100);
 }
-body.no-scroll {
+
+.no-scroll {
   width: 100%;
   height: 100%;
   overflow: hidden;
