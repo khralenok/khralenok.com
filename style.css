@@ -402,6 +402,11 @@ span.secondary {
   flex-direction: column;
 }
 
+.modal .title{
+  width: 100%;
+  text-align: center;
+}
+
 .modal > form {
   display: flex;
   flex-direction: column;
@@ -422,11 +427,11 @@ label.required::after {
 
 .modal-close {
   position: absolute;
-  inset: 2rem 2rem auto auto;
-  fill: none;
+  inset: var(--spacing-friends) var(--spacing-friends) auto auto;
+  border-radius: var(--spacing-siblings);
   stroke: var(--black);
-  width: var(--spacing-siblings);
-  height: var(--spacing-siblings);
+  width: var(--spacing-friends);
+  height: var(--spacing-friends);
 }
 
 button[type="submit"] {
@@ -438,7 +443,7 @@ button[type="submit"] {
   display: none;
   border: 2px solid transparent;
   border-top: 2px solid #fff;
-  border-radius: 50%;
+  border-radius: 50%;s
   width: var(--spacing-siblings);
   height: var(--spacing-siblings);
   animation: spin 0.8s linear infinite;
