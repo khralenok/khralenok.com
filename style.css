@@ -158,6 +158,10 @@ section.dark {
   gap: var(--spacing-housemates);
 }
 
+#services .container {
+  min-height: 700px;
+}
+
 .cta {
   text-align: center;
 }
@@ -479,6 +483,10 @@ button[type="submit"] {
     width: 60em; /* 960px */
   }
 
+  #services .container {
+    min-height: 542px;
+  }
+
   #hero-image img {
     height: calc(100% + 10rem);
     bottom: 0rem;
@@ -502,6 +510,10 @@ button[type="submit"] {
 @media screen and (max-width: 960px) {
   .container {
     width: 40em; /* 640px */
+  }
+
+  #services .container {
+    min-height: 680px;
   }
 
   .component {
@@ -536,6 +548,10 @@ button[type="submit"] {
     width: 30em; /* 480px */
   }
 
+  #services .container {
+    min-height: 580px;
+  }
+
   #hero-image img {
     height: calc(100% + 4rem);
   }
@@ -559,6 +575,10 @@ button[type="submit"] {
   #my-projects .card,
   #cta-banner .card {
     grid-column: 1 / span 4;
+  }
+
+  #services .container {
+    min-height: 620px;
   }
 
   #hero-image {
