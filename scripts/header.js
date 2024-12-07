@@ -15,3 +15,18 @@ const obsOptions = {
 const observer = new IntersectionObserver(obsCallback, obsOptions);
 
 observer.observe(obsTarget);
+
+const navigation = document.querySelector("nav");
+const menuItems = navigation.querySelector("ul");
+const menuIcon = document.querySelector(".menu-icon");
+
+const showMenu = function () {
+  navigation.classList.toggle("active");
+};
+
+const hideMenu = function () {
+  navigation.classList.remove("active");
+};
+
+menuIcon.addEventListener("click", showMenu);
+menuItems.addEventListener("click", hideMenu);

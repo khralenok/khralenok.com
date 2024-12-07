@@ -93,11 +93,16 @@ footer {
   position: relative;
 }
 
-header,
-footer {
+header {
   justify-content: space-between;
   padding: 0 var(--spacing-friends);
   height: 5rem;
+}
+
+footer {
+  justify-content: space-between;
+  padding: var(--spacing-housemates) var(--spacing-friends)
+    var(--spacing-townmates) var(--spacing-friends);
 }
 
 section {
@@ -107,13 +112,13 @@ header {
   top: 5rem;
   transform: translateY(-5rem);
   transition: transform 250ms;
+  z-index: 150;
 }
 header.sticky {
   position: fixed;
   inset: 0 0 auto 0;
   background: var(--white);
   transform: translateY(0rem);
-  z-index: 150;
 }
 
 .logo {
@@ -236,6 +241,10 @@ nav a {
   text-decoration: none;
   color: inherit;
   display: block;
+}
+
+.menu-icon {
+  display: none;
 }
 
 #social-media {
@@ -478,6 +487,9 @@ button[type="submit"] {
     --paragraph-font-size: 1rem;
     --spacing-siblings: 0.75rem;
   }
+  header {
+    height: 4.5rem;
+  }
 
   .container {
     width: 60em; /* 960px */
@@ -533,9 +545,53 @@ button[type="submit"] {
     grid-column: 1 / span 6;
   }
 
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: var(--spacing-housemates);
+    width: var(--spacing-housemates);
+    background: var(--gray200);
+    gap: calc(var(--spacing-siblings) / 3);
+    border-radius: var(--spacing-siblings);
+    z-index: 490;
+  }
+  .menu-icon-bar {
+    height: 2px;
+    width: var(--spacing-friends);
+    background: var(--gray800);
+  }
+
   nav {
     position: absolute;
-    transform: translateX(1000px);
+    display: flex;
+    transform: translateX(100%);
+    inset: 0 0 0 auto;
+    height: 100svh;
+    width: 80%;
+    background: var(--white);
+    z-index: 480;
+    justify-content: center;
+    align-items: center;
+    transition: transform 500ms;
+    border-radius: var(--spacing-housemates) 0 0 var(--spacing-housemates);
+  }
+
+  nav.active {
+    z-index: 480;
+    transform: translateX(0);
+  }
+
+  nav > ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer {
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-housemates);
   }
 }
 
@@ -544,6 +600,11 @@ button[type="submit"] {
     --paragraph-font-size: 0.875rem;
     --spacing-siblings: 0.5rem;
   }
+
+  header {
+    height: 4rem;
+  }
+
   .container {
     width: 30em; /* 480px */
   }
