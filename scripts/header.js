@@ -22,10 +22,12 @@ const menuIcon = document.querySelector(".menu-icon");
 
 const showMenu = function () {
   navigation.classList.toggle("active");
+  document.body.classList.toggle("no-scroll");
 };
 
 const hideMenu = function () {
   navigation.classList.remove("active");
+  document.body.classList.remove("no-scroll");
 };
 
 menuIcon.addEventListener("click", showMenu);
