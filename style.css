@@ -207,12 +207,29 @@ section.dark {
   position: absolute;
   max-height: 0;
   opacity: 0;
-  transition: opacity 250ms, max-height 1000ms;
 }
+
 .accordion.card.active p {
+  animation: accordionTextAppearence 500ms;
   position: static;
   max-height: 20em;
   opacity: 1;
+}
+
+@keyframes accordionTextAppearence {
+  0% {
+    position: absolute;
+  }
+  1% {
+    position: static;
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    position: static;
+    max-height: 20em;
+    opacity: 1;
+  }
 }
 
 section.dark .card {
