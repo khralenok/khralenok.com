@@ -270,7 +270,7 @@ nav a {
 #social-media {
   display: flex;
   list-style: none;
-  gap: var(--spacing-siblings);
+  gap: var(--spacing-friends);
 }
 .social-media {
   fill: var(--gray800);
