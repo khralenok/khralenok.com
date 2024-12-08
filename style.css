@@ -152,6 +152,12 @@ footer .logo-icon {
   fill: var(--gray800);
 }
 
+.footer-credits {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 section {
   justify-content: center;
 }
@@ -232,6 +238,8 @@ section.dark .card {
 .avatar {
   height: var(--spacing-housemates);
   width: var(--spacing-housemates);
+  border-radius: 100px;
+  overflow: hidden;
 }
 .avatar img {
   width: 100%;
@@ -360,7 +368,13 @@ span.secondary {
   overflow: hidden;
 }
 .cover img {
+  display: flex;
   width: 100%;
+  aspect-ratio: 3 / 2;
+}
+
+#my-projects .cover img {
+  aspect-ratio: 2 / 1;
 }
 
 .modal-wrapper {
@@ -402,7 +416,7 @@ span.secondary {
   flex-direction: column;
 }
 
-.modal .title{
+.modal .title {
   width: 100%;
   text-align: center;
 }
@@ -443,7 +457,7 @@ button[type="submit"] {
   display: none;
   border: 2px solid transparent;
   border-top: 2px solid #fff;
-  border-radius: 50%;s
+  border-radius: 50%;
   width: var(--spacing-siblings);
   height: var(--spacing-siblings);
   animation: spin 0.8s linear infinite;
@@ -604,6 +618,12 @@ button[type="submit"] {
     justify-content: center;
     flex-direction: column;
     gap: var(--spacing-housemates);
+  }
+
+  .footer-credits {
+    position: static;
+    left: auto;
+    transform: none;
   }
 }
 
