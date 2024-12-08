@@ -245,8 +245,9 @@ section.dark .card {
   width: 100%;
 }
 
-ul {
-  padding-inline-start: none;
+header ul,
+footer ul {
+  padding-left: 0;
 }
 
 nav > ul {
