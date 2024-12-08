@@ -245,6 +245,10 @@ section.dark .card {
   width: 100%;
 }
 
+ul {
+  padding-inline-start: none;
+}
+
 nav > ul {
   list-style: none;
   display: flex;
