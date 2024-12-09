@@ -11,7 +11,7 @@ const formHandle = async function (e) {
     message: document.getElementById("message").value,
   };
 
-  if (formData.humanTest !== "true") {
+  if (formData.humanTest !== "false") {
     feedbackMessage.className = "error";
     feedbackMessage.textContent = "Human test failed.";
     feedbackMessage.classList.remove("hidden");
