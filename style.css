@@ -31,12 +31,15 @@
   box-sizing: border-box;
   margin: 0;
 }
+
 html {
   width: 100%;
 }
+
 html:has(body.no-scroll) {
   overflow: hidden;
 }
+
 html:not(:has(body.no-scroll)) {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -425,6 +428,8 @@ span.secondary {
 }
 
 .modal {
+  max-width: 60em;
+  min-width: 18em;
   width: 80%;
   position: absolute;
   top: 50%;
@@ -455,6 +460,9 @@ span.secondary {
   background: var(--gray100);
   border: 0px;
   border-radius: calc(var(--spacing-siblings) / 2);
+}
+#humanTest {
+  display: none;
 }
 label.required::after {
   content: " *";

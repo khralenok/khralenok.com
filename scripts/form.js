@@ -5,47 +5,48 @@ const feedbackMessage = document.getElementById("feedbackMessage");
 
 const formHandle = async function (e) {
   e.preventDefault();
+  const formData = {
+    email: document.getElementById("email").value,
+    name: document.getElementById("name").value,
+    humanTest: document.getElementById("humanTest").value,
+    message: document.getElementById("message").value,
+  };
 
-  // Show spinner and disable the button
-  spinner.style.display = "inline-block";
-  submitBtn.disabled = true;
+  if (formData.humanTest === "false" ? true : false) {
+    try {
+      // Send form data using Fetch API
+      const response = await fetch(this.action, {
+        method: "POST",
+        body: formData,
+      });
 
-  // Collect form data
-  const formData = new FormData(this);
+      const result = await response.json();
 
-  try {
-    // Send form data using Fetch API
-    const response = await fetch(this.action, {
-      method: "POST",
-      body: formData,
-    });
+      // Hide spinner
+      spinner.style.display = "none";
+      submitBtn.disabled = false;
 
-    const result = await response.json();
+      // Show feedback message
+      feedbackMessage.className =
+        result.status === "success" ? "success" : "error";
+      feedbackMessage.textContent = result.message;
+      console.log(result.message);
+      feedbackMessage.classList.remove("hidden");
 
-    // Hide spinner
-    spinner.style.display = "none";
-    submitBtn.disabled = false;
+      // Clear form on success
+      if (result.status === "success") {
+        this.reset();
+      }
+    } catch (error) {
+      // Hide spinner and re-enable button
+      spinner.style.display = "none";
+      submitBtn.disabled = false;
 
-    // Show feedback message
-    feedbackMessage.className =
-      result.status === "success" ? "success" : "error";
-    feedbackMessage.textContent = result.message;
-    console.log(result.message);
-    feedbackMessage.classList.remove("hidden");
-
-    // Clear form on success
-    if (result.status === "success") {
-      this.reset();
+      // Show error message
+      feedbackMessage.className = "error";
+      feedbackMessage.textContent = "Something went wrong. Please try again.";
+      feedbackMessage.classList.remove("hidden");
     }
-  } catch (error) {
-    // Hide spinner and re-enable button
-    spinner.style.display = "none";
-    submitBtn.disabled = false;
-
-    // Show error message
-    feedbackMessage.className = "error";
-    feedbackMessage.textContent = "Something went wrong. Please try again.";
-    feedbackMessage.classList.remove("hidden");
   }
 };
 
