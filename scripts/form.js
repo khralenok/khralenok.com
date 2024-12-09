@@ -17,7 +17,7 @@ const formHandle = async function (e) {
       // Send form data using Fetch API
       const response = await fetch(this.action, {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
