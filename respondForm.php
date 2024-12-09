@@ -11,15 +11,12 @@ $subject = "New form submission on khralenok.com";
 $message = "Name = $name\r\nEmail = $email\r\nMessage = $message";
 $headers = "From: grigorii@khralenok.com";
 
-
+header("Content-Type: application/json");
 if (mail($to, $subject, $message, $headers)) {
-    echo "Email sent successfully.";
+    echo json_encode(["status" => "success", "message" => "Email sent successfully."]);
 } else {
-    echo "Failed to send email.";
+    echo json_encode(["status" => "error", "message" => "Failed to send email."]);
 }
-
-// Redirect to another page
-header("Location: /");
-exit(); // Ensure no further processing
+exit(); // Prevent further processing
 ?>
 
