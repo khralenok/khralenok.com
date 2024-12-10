@@ -18,18 +18,18 @@ if($humanTest === 'unchanged'){
     
         header("Content-Type: application/json");
         if (mail($to, $subject, $message, $headers)) {
-        echo json_encode(["status" => "success", "message" => "Email sent successfully."]);
+        echo json_encode(["status" => "success", "message" => "Submission sent successfully."]);
         } else {
-        error_log("Mail sending failed.");
-        echo json_encode(["status" => "error", "message" => "Failed to send email."]);
+        error_log("Submission sending failed.");
+        echo json_encode(["status" => "error", "message" => "Submission sending failed."]);
         }
     } else {
-        error_log("Key fields was empty. Email was not sent");
-        echo json_encode(["status" => "error", "message" => "Key fields was empty."]);
+        error_log("Key fields was empty or filled wrong. Submission was not sent.");
+        echo json_encode(["status" => "error", "message" => "Key fields was empty or filled wrong. Submission not sent."]);
     }
 } else {
     error_log("Human test was failed. Email was not set");
-    echo json_encode(["status" => "error", "message" => "Human test was failed."]);
+    echo json_encode(["status" => "error", "message" => "Human test was failed. Submission not sent."]);
 }
 exit(); // Prevent further processing
 ?>
