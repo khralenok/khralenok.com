@@ -11,13 +11,6 @@ const formHandle = async function (e) {
     message: document.getElementById("message").value,
   };
 
-  if (formData.humanTest !== "false") {
-    feedbackMessage.className = "error";
-    feedbackMessage.textContent = "Human test failed.";
-    feedbackMessage.classList.remove("hidden");
-    return;
-  }
-
   try {
     // Send form data using Fetch API
     const response = await fetch(this.action, {
@@ -35,7 +28,6 @@ const formHandle = async function (e) {
       result.status === "success" ? "success" : "error";
     feedbackMessage.textContent = result.message;
     feedbackMessage.classList.remove("hidden");
-
     // Clear form on success
     if (result.status === "success") {
       this.reset();
