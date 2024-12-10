@@ -4,7 +4,7 @@ function makeInputSafe($value){
 }
 
 function nameValidation($testName){
-    return (preg_match('/^[a-zA-Z\s\-]+$/', $testName) && (strlen(preg_replace('/[^A-Z]/', '', $testName)) / strlen($testName)) <= 0.25)
+    return (preg_match('/^[a-zA-Z\s\-]+$/', $testName) && (strlen(preg_replace('/[^A-Z]/', '', $testName)) / strlen($testName)) <= 0.25);
 }   
 
 // Get data from form  
