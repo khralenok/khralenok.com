@@ -25,15 +25,15 @@ if($humanTest === 'unchanged' && nameValidation($name)){
         echo json_encode(["status" => "success", "message" => "Submission sent successfully."]);
         } else {
         error_log("Submission sending failed.");
-        echo json_encode(["status" => "error", "message" => "Submission sending failed."]);
+        echo json_encode(["status" => "error", "message" => "Submission sending failed. You could try again later."]);
         }
     } else {
         error_log("Key fields was empty or filled wrong. Submission was not sent.");
-        echo json_encode(["status" => "error", "message" => "Key fields was empty or filled wrong. Submission not sent."]);
+        echo json_encode(["status" => "error", "message" => "Submission not sent. Could you doublecheck information?"]);
     }
 } else {
     error_log("Human test was failed. Email was not set");
-    echo json_encode(["status" => "error", "message" => "Human test was failed. Submission not sent."]);
+    echo json_encode(["status" => "error", "message" => "Submission not sent. Human test was failed. "]);
 }
 exit(); // Prevent further processing
 ?>
