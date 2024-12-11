@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php file_get_contents("/portfolio/3d-animation-music-video.html")?>
+    <?php file_get_contents("portfolio/3d-animation-music-video.html")?>
 </body>
 </html>
