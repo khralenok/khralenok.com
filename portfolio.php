@@ -8,6 +8,7 @@
     function e($value) {
         return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
     }
+    
     $curPage = e($_GET['case']);
     ?>
 </head>
