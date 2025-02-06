@@ -1,0 +1,14 @@
+
+# Allow tracking only these folders
+!themes/khralenok_com/
+!mu-plugins/
+
+# Ignore WordPress-generated and unnecessary files
+*.log
+*.sql
+uploads/
+cache/
+index.php
+.DS_Store
+node_modules/
+vendor/
