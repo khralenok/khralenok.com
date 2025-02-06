@@ -7,7 +7,6 @@
 *.sql
 uploads/
 cache/
-index.php
 .DS_Store
 node_modules/
 vendor/
