@@ -1,5 +1,4 @@
-
-# Allow tracking only these folders
+*
 !themes/khralenok_com/
 !mu-plugins/
 
