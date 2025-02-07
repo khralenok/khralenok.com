@@ -27,10 +27,20 @@ footer .logo svg {
   transform: scale(1.2);
 }
 
+.footer-credits {
+  display: flex;
+  justify-content: center;
+}
 .footer-links {
   display: flex;
   list-style: none;
+  padding-inline-start: 0;
   gap: var(--spacing-siblings);
+  justify-content: center;
+}
+
+.molecule:has(.footer-links) {
+  flex-direction: column;
 }
 
 .footer-links a {

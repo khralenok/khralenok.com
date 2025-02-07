@@ -185,6 +185,7 @@
 
   #hero ul {
     list-style: none;
+    padding-inline-start: 0;
   }
 
   #hero li {
