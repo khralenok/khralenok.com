@@ -51,7 +51,7 @@
                     <div class="card">
                       <?php the_content();?>
                       <div class="molecule">
-                        <figure class="avatar"><img src="<?php the_post_thumbnail_url(); ?>" alt=""/></figure>
+                        <figure class="avatar"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" loading="lazy"/></figure>
                         <div>
                           <a><b><?php echo the_title()?></b></a><br>
                           <a>
@@ -91,7 +91,8 @@
                   <div class="avatar">
                       <img
                       src="<?php echo get_theme_file_uri('images/icons_html.svg')?>"
-                      alt=""
+                      alt="html"
+                      loading="lazy"
                       />
                   </div>
                   <div class="wrapper">
@@ -107,7 +108,8 @@
                   <div class="avatar">
                       <img
                       src="<?php echo get_theme_file_uri('images/icons_figma.svg')?>"
-                      alt=""
+                      alt="figma"
+                      loading="lazy"
                       />
                   </div>
                   <div class="wrapper">
@@ -123,7 +125,8 @@
                   <div class="avatar">
                       <img
                       src="<?php echo get_theme_file_uri('images/icons_css.svg')?>"
-                      alt=""
+                      alt="css"
+                      loading="lazy"
                       />
                   </div>
                   <div class="wrapper">
@@ -139,7 +142,8 @@
                   <div class="avatar">
                       <img
                       src="<?php echo get_theme_file_uri('images/icons_js.svg')?>"
-                      alt=""
+                      alt="JavaScript"
+                      loading="lazy"
                       />
                   </div>
                   <div class="wrapper">
@@ -155,7 +159,8 @@
                   <div class="avatar">
                       <img
                       src="<?php echo get_theme_file_uri('images/icons_php.svg')?>"
-                      alt=""
+                      alt="PHP"
+                      loading="lazy"
                       />
                   </div>
                   <div class="wrapper">
@@ -171,7 +176,8 @@
                   <div class="avatar">
                       <img
                       src="<?php echo get_theme_file_uri('images/icons_cms.svg')?>"
-                      alt=""
+                      alt="Wordpress"
+                      loading="lazy"
                       />
                   </div>
                   <div class="wrapper">
