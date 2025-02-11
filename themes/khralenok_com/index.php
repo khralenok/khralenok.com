@@ -1,1 +1,0 @@
-Test of the pagegit check-ignore

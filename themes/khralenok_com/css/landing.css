@@ -12,17 +12,17 @@
 }
 
 #hero figure img {
-  width: 100%;
+  width: calc((var(--container-width) - var(--spacing-friends)) / 2);
+  height: calc((var(--container-width) - var(--spacing-friends)) / 2);
 }
 
 .avatar {
-  height: var(--spacing-housemates);
-  width: var(--spacing-housemates);
   border-radius: 1000px;
   overflow: hidden;
 }
 .avatar img {
-  width: 100%;
+  height: var(--spacing-housemates);
+  width: var(--spacing-housemates);
 }
 
 .edge-decoration {
@@ -181,6 +181,11 @@
     grid-column: span 6;
     align-items: center;
     text-align: center;
+  }
+
+  #hero figure img {
+    width: calc(var(--container-width) * 0.8);
+    height: calc(var(--container-width) * 0.8);
   }
 
   #hero ul {

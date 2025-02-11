@@ -9,9 +9,9 @@
         </svg>
     </a>
     <ul id="social-media">
-      <li><a href="https://www.youtube.com/channel/UCsaurqTzPbEaKiO5JnhezEA" target="_blank"><img src="<?php echo get_theme_file_uri('images/social-youtube.svg')?>" alt="YouTube" loading="lazy" /></a></li>
-      <li><a href="https://www.instagram.com/khralenok.studio/" target="_blank"><img src="<?php echo get_theme_file_uri('images/social-instagram.svg')?>" alt="Instagram" loading="lazy" /></a></li>
-      <li><a href="https://www.linkedin.com/in/khralenok/" target="_blank"><img src="<?php echo get_theme_file_uri('images/social-linkedin.svg')?>" alt="LinkedIn"loading="lazy" /></a></li>
+      <li><a href="https://www.youtube.com/channel/UCsaurqTzPbEaKiO5JnhezEA" target="_blank"><img width="24" height="24" src="<?php echo get_theme_file_uri('images/social-youtube.svg')?>" alt="YouTube" loading="lazy" /></a></li>
+      <li><a href="https://www.instagram.com/khralenok.studio/" target="_blank"><img width="24" height="24" src="<?php echo get_theme_file_uri('images/social-instagram.svg')?>" alt="Instagram" loading="lazy" /></a></li>
+      <li><a href="https://www.linkedin.com/in/khralenok/" target="_blank"><img width="24" height="24" src="<?php echo get_theme_file_uri('images/social-linkedin.svg')?>" alt="LinkedIn"loading="lazy" /></a></li>
     </ul>
   </div>
   <div class="molecule liquid">

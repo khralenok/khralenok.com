@@ -19,7 +19,7 @@
                 </div>
               </div>
               <figure>
-                <img src="<?php echo get_theme_file_uri('images/avatar.webp')?>" />
+                <img width="624" height="624" src="<?php echo get_theme_file_uri('images/avatar.webp')?>" />
               </figure>  
           </div>
         </div>
@@ -51,7 +51,7 @@
                     <div class="card">
                       <?php the_content();?>
                       <div class="molecule">
-                        <figure class="avatar"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" loading="lazy"/></figure>
+                        <figure class="avatar"><img width="64" height="64" src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" loading="lazy"/></figure>
                         <div>
                           <a><b><?php echo the_title()?></b></a><br>
                           <a>
@@ -89,7 +89,7 @@
               <div class="card">
                 <div class="molecule">
                   <div class="avatar">
-                      <img
+                      <img 
                       src="<?php echo get_theme_file_uri('images/icons_html.svg')?>"
                       alt="html"
                       loading="lazy"
@@ -106,7 +106,8 @@
               <div class="card">
                 <div class="molecule">
                   <div class="avatar">
-                      <img
+                      <img 
+                      width="64" height="64"
                       src="<?php echo get_theme_file_uri('images/icons_figma.svg')?>"
                       alt="figma"
                       loading="lazy"
@@ -124,6 +125,7 @@
                 <div class="molecule">
                   <div class="avatar">
                       <img
+                      width="64" height="64"
                       src="<?php echo get_theme_file_uri('images/icons_css.svg')?>"
                       alt="css"
                       loading="lazy"
@@ -141,6 +143,7 @@
                 <div class="molecule">
                   <div class="avatar">
                       <img
+                      width="64" height="64"
                       src="<?php echo get_theme_file_uri('images/icons_js.svg')?>"
                       alt="JavaScript"
                       loading="lazy"
@@ -158,6 +161,7 @@
                 <div class="molecule">
                   <div class="avatar">
                       <img
+                      width="64" height="64"
                       src="<?php echo get_theme_file_uri('images/icons_php.svg')?>"
                       alt="PHP"
                       loading="lazy"
@@ -175,6 +179,7 @@
                 <div class="molecule">
                   <div class="avatar">
                       <img
+                      width="64" height="64"
                       src="<?php echo get_theme_file_uri('images/icons_cms.svg')?>"
                       alt="Wordpress"
                       loading="lazy"
