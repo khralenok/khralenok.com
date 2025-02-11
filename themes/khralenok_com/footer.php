@@ -15,7 +15,7 @@
     </ul>
   </div>
   <div class="molecule liquid">
-    <a class="footer-credits"><?php echo date('Y');?>, Grigorii Khralenok</a>
+    <a class="footer-credits" role="presentation"><?php echo date('Y');?>, Grigorii Khralenok</a>
     <ul class="footer-links">
       <li><a href="<?php echo get_permalink('3'); ?>">Privacy Policy</a></li>
       <li><a href="<?php echo get_permalink('50'); ?>">Terms of Services</a></li>
