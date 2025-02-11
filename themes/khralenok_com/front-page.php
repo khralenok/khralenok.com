@@ -53,8 +53,8 @@
                       <div class="molecule">
                         <figure class="avatar"><img alt="<?php echo the_title()?>" width="64" height="64" src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" loading="lazy"/></figure>
                         <div>
-                          <a><b><?php echo the_title()?></b></a><br>
-                          <a>
+                          <a role="presentation"><b><?php echo the_title()?></b></a><br>
+                          <a role="presentation">
                             <?php for($i = 0; $i < 5; $i++){
                               echo $i < get_field('grade')?'<span class="grade">&#9733<span>' : '<span class="grade inactive">&#9733<span>';
                               };
@@ -207,21 +207,21 @@
             <div class="component prices">
               <div class="card">
                 <h3>4 Lessons/Month</h3>
-                <a class="price">$280</a>
+                <a role="presentation" class="price">$280</a>
                 <p>
                 Plan for those who comfortable to learn on their own and just want get feedback and guidance on this way
                 </p>
               </div>
               <div class="card highlighted">
                 <h3>8 Lessons/Month</h3>
-                <a class="price">$520</a>
+                <a role="presentation" class="price">$520</a>
                 <p>
                 Perfect option for students who want to learn step by step with advance guidance and deep feedback.
                 </p>
               </div>
               <div class="card">
                 <h3>16 Lessons/Month</h3>
-                <a class="price">$960</a>
+                <a role="presentation" class="price">$960</a>
                 <p>
                 Option for those who eager to jump into web development quickly and have courage and energy to run project as soon as possible.
                 </p>
@@ -249,6 +249,7 @@
                   <label for="email">Enter your email:</label>
                   <input class="form-input" id="email" name="email" type="email" placeholder="john@smith.com" required>
               </div>
+              <label for="fav-power-ranger"></label>
               <input class="form-input" id="fav-power-ranger" name="fav-power-ranger" type="text" value="red">
               <input class="button" type="submit" value="Let’s start!">
               <div id="form-status"></div>

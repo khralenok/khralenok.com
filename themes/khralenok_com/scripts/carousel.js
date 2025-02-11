@@ -35,9 +35,9 @@ const carouselComponent = function () {
 
     for (let i = 0; i < numOfPages; i++) {
       if (i < curPage + 1) {
-        paginationMarkup += '<a class="dot active"></a>';
+        paginationMarkup += '<a role="presentation" class="dot active"></a>';
       } else {
-        paginationMarkup += '<a class="dot"></a>';
+        paginationMarkup += '<a role="presentation" class="dot"></a>';
       }
     }
     pagination.innerHTML = paginationMarkup;

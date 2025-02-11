@@ -1,6 +1,6 @@
 <footer>
   <div class="molecule liquid">
-    <a class="logo" href="/">
+    <a class="logo" aria-label="To Main Page" href="/">
         <svg viewBox="0 0 220 40" xmlns="http://www w3 org/2000/svg">
           <path d="M168 16 C169 12 173 10 177 11 C181 12 183 16 182 20 C181 25 177 27 173 26 C169 25 167 21 168 16 Z" />
           <path d="M86 18 L89 18 L88 14 L86 18 Z" />

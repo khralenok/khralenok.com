@@ -163,7 +163,8 @@
   display: block;
 }
 
-#fav-power-ranger {
+#fav-power-ranger,
+label[for="fav-power-ranger"] {
   position: absolute;
   overflow: hidden !important;
   opacity: 0;
