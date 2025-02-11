@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php wp_head(); ?>
-<meta name="description" content="Learn to create websites with Grigorii Khralenok - your personal mentor"> </meta>
+<meta name="description" content="Learn to create websites with Grigorii Khralenok - your personal mentor"></meta>
 <title>
   <?php 
   echo get_bloginfo('name');
