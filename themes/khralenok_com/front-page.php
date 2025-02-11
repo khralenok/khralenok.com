@@ -19,7 +19,7 @@
                 </div>
               </div>
               <figure>
-                <img width="624" height="624" src="<?php echo get_theme_file_uri('images/avatar.webp')?>" />
+                <img width="624" height="624" alt="Your Mentor - Grigorii Khralenok" src="<?php echo get_theme_file_uri('images/avatar.webp')?>" />
               </figure>  
           </div>
         </div>
@@ -51,7 +51,7 @@
                     <div class="card">
                       <?php the_content();?>
                       <div class="molecule">
-                        <figure class="avatar"><img width="64" height="64" src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" loading="lazy"/></figure>
+                        <figure class="avatar"><img alt="<?php echo the_title()?>" width="64" height="64" src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" loading="lazy"/></figure>
                         <div>
                           <a><b><?php echo the_title()?></b></a><br>
                           <a>
