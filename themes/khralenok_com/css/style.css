@@ -151,7 +151,7 @@ button,
   font-weight: 600;
   color: var(--color-lightest);
   text-decoration: none;
-  background: var(--color-mid800);
+  background: var(--color-mid900);
   border: 0px;
   border-radius: calc(var(--spacing-siblings) / 2);
   padding: var(--spacing-siblings) calc(var(--spacing-siblings) * 3);
