@@ -8,6 +8,7 @@
   --color-mid600: #fb7d64;
   --color-mid700: #fa6432;
   --color-mid800: #e64020;
+  --color-mid850: #d2371a;
   --color-mid900: #be2d14;
   --color-darkest: #5a1006;
   --color-accent: #ffd700;
@@ -70,8 +71,8 @@ section {
 }
 
 section.dark {
-  background-color: var(--color-mid800);
-  color: var(--color-mid100);
+  background-color: var(--color-mid900);
+  color: var(--color-lightest);
 }
 
 .container {
@@ -108,7 +109,7 @@ section.dark {
 }
 
 section.dark .card {
-  background-color: var(--color-mid900);
+  background-color: var(--color-mid850);
 }
 
 .card.highlighted {
