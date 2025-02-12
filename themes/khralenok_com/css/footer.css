@@ -5,12 +5,12 @@ footer {
   gap: var(--spacing-housemates);
   padding: var(--spacing-housemates) var(--spacing-friends);
   background: var(--color-darkest);
-  color: var(--color-mid900);
+  color: var(--color-mid600);
   transition: color 500ms;
 }
 
 footer .logo svg {
-  fill: var(--color-mid900);
+  fill: var(--color-mid600);
 }
 
 #social-media {

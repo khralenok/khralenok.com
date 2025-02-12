@@ -131,27 +131,34 @@
   background-color: var(--color-lightest);
 }
 
-#contact-form form {
+#contact-form .title {
+  width: 100%;
+}
+
+#the-form {
   justify-content: right;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-friends);
-}
-
-#contact-form .title {
-  width: 100%;
-}
-
-#contact-form label {
-  color: var(--color-mid600);
+  color: var(--color-mid200);
 }
 
 .form-input {
   padding: calc(var(--spacing-siblings) * 0.75);
   border-radius: calc(var(--spacing-siblings) / 2);
   border: none;
-  background-color: var(--color-lightest);
+  background-color: var(--color-mid200);
+  color: var(--color-darkest);
+}
+
+.form-input::placeholder {
+  color: var(--color-mid900);
+}
+
+#the-form .button {
+  color: var(--color-darkest);
+  background-color: var(--color-mid600);
 }
 
 #form-status {
