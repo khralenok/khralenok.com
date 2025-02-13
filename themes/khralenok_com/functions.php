@@ -57,3 +57,16 @@ add_action('rest_api_init', function() {
         'permission_callback' => '__return_true'
     ]);
 });
+
+function form_submission_notification($post){
+        $to = 'khralenok.g@gmail.com';
+        $subject = 'New Form Submission on khralenok.com';
+        $message = "There is a new form submission:\r\n";
+        $message .= "Name: {$post->post_title} \r\n";
+        $message .= "Email: {$post->post_content}";
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+    
+        wp_mail($to, $subject, $message, $headers);
+}
+
+add_action('publish_contact', 'form_submission_notification', 10 , 1);
