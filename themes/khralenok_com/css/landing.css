@@ -159,6 +159,11 @@
 #the-form .button {
   color: var(--color-darkest);
   background-color: var(--color-mid600);
+  flex-grow: 1;
+}
+
+#the-form .molecule:has(.button) {
+  align-items: center;
 }
 
 #form-status {
@@ -168,6 +173,26 @@
 }
 #form-status.active {
   display: block;
+}
+
+#form-spinner {
+  width: var(--spacing-friends);
+  height: var(--spacing-friends);
+  border: 5px solid var(--color-mid200);
+  border-bottom-color: var(--color-darkest);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #fav-power-ranger,

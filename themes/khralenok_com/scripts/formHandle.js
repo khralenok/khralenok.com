@@ -4,6 +4,7 @@ const formHandle = function () {
   const statusMessage = document.getElementById("form-status");
   const banner = document.querySelector(".banner");
   const startTime = Date.now();
+  const spinner = document.getElementById("form-spinner");
 
   const validateEmail = function (email) {
     const normalizedEmail = email.toLowerCase().trim();
@@ -55,6 +56,7 @@ const formHandle = function () {
 
   const getFormData = function (e) {
     e.preventDefault();
+    spinner.style.display = "block";
     const formData = new FormData(form, submitter);
 
     if (Date.now() - startTime < 2000) {
@@ -87,6 +89,7 @@ const formHandle = function () {
   };
 
   const displayResult = function (body, heading = "", isError = true) {
+    spinner.style.display = "none";
     if (isError) {
       const markup = body;
       statusMessage.classList.add("active");

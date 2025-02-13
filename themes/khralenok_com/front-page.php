@@ -251,7 +251,8 @@
               </div>
               <label for="fav-power-ranger"></label>
               <input class="form-input" id="fav-power-ranger" name="fav-power-ranger" type="text" value="red">
-              <input class="button" type="submit" value="Let’s start!">
+              <div class="molecule"><input class="button" type="submit" value="Let’s start!"><span id="form-spinner" style="display:none;"></span></div>
+
               <div id="form-status"></div>
             </form>
           </div>

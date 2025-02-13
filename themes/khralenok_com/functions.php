@@ -59,11 +59,12 @@ add_action('rest_api_init', function() {
 });
 
 function form_submission_notification($post){
+        $this_post = get_post($post);
         $to = 'khralenok.g@gmail.com';
         $subject = 'New Form Submission on khralenok.com';
-        $message = "There is a new form submission:\r\n";
-        $message .= "Name: {$post->post_title} \r\n";
-        $message .= "Email: {$post->post_content}";
+        $message = "<p>There is a new form submission:</p>";
+        $message .= "<p>Name: {$this_post->post_title}</p>";
+        $message .= "<p>Email: {$this_post->post_content}</p>";
         $headers = array('Content-Type: text/html; charset=UTF-8');
     
         wp_mail($to, $subject, $message, $headers);
