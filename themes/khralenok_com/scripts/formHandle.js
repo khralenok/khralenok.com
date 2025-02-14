@@ -64,7 +64,11 @@ const formHandle = function () {
       return;
     }
 
-    if (formData.get("name") === "" || formData.get("email") === "") {
+    if (
+      formData.get("name") === "" ||
+      formData.get("email") === "" ||
+      formData.get("privacy-policy" === false)
+    ) {
       displayResult("Please, fill the firm first");
       return;
     }

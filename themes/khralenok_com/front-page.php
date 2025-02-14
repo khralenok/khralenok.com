@@ -249,6 +249,10 @@
                   <label for="email">Enter your email:</label>
                   <input class="form-input" id="email" name="email" type="email" placeholder="john@smith.com" required>
               </div>
+              <div class="molecule">
+                <input type="checkbox" name="privacy-policy" id="privacy-policy" required>
+                <label for="privacy-policy">I agree with <a href="<?php echo get_permalink('3'); ?>">Privacy Policy</a></label>
+              </div>
               <label for="fav-power-ranger"></label>
               <input class="form-input" id="fav-power-ranger" name="fav-power-ranger" type="text" value="red">
               <div class="molecule"><input class="button" type="submit" value="Let’s start!"><span id="form-spinner" style="display:none;"></span></div>

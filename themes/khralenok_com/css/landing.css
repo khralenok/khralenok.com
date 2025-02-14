@@ -195,6 +195,14 @@
   }
 }
 
+label[for="privacy-policy"] {
+  font-weight: 400;
+}
+
+label[for="privacy-policy"] a:-webkit-any-link {
+  color: var(--color-accent);
+}
+
 #fav-power-ranger,
 label[for="fav-power-ranger"] {
   position: absolute;
