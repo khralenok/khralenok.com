@@ -250,7 +250,7 @@
                   <input class="form-input" id="email" name="email" type="email" placeholder="john@smith.com" required>
               </div>
               <div class="molecule">
-                <input type="checkbox" name="privacy-policy" id="privacy-policy" required>
+                <input type="checkbox" name="privacy-policy" id="privacy-policy" value="true" required>
                 <label for="privacy-policy">I agree with <a href="<?php echo get_permalink('3'); ?>">Privacy Policy</a></label>
               </div>
               <label for="fav-power-ranger"></label>

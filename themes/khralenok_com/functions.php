@@ -27,7 +27,7 @@ function create_contact(WP_REST_Request $request) {
             return new WP_REST_Response(["success" => false, "error" => "Bot submission detected"], 400);
         }
 
-        if($formData['privacy-policy'] !== 'true'){
+        if($formData['privacy_policy'] !== 'true'){
             return new WP_REST_Response(["success" => false, "error" => "Please, agree with Privacy Policy first"], 400);
         }
 

@@ -85,6 +85,7 @@ const formHandle = function () {
       name: formData.get("name"),
       email: formData.get("email"),
       fav_pow_ranger: formData.get("fav-power-ranger"),
+      privacy_policy: formData.get("privacy-policy"),
       time: Date.now() - startTime,
     };
     sendData(formDataValid);
