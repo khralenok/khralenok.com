@@ -51,10 +51,16 @@ nav a {
 
 .logo {
   display: inline-flex;
-  width: 12.5rem;
 }
-.logo svg {
-  width: 100%;
+
+.logo-letter {
+  stroke: var(--color-mid300);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-back {
   fill: var(--color-mid800);
 }
 
